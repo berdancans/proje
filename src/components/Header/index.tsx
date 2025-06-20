@@ -48,8 +48,8 @@ const Header = () => {
         }`}
       >
         <div className="container">
-          <div className="relative -mx-4 flex flex-col items-center justify-center">
-            <div className="w-[300px] max-w-full px-4 mb-4">
+          <div className="relative -mx-4 flex flex-col items-center justify-center text-center">
+            <div className="w-full max-w-[360px] px-4 mb-4 mx-auto">
               <Link
                 href="/"
                 className={`header-logo block w-full ${
@@ -72,7 +72,7 @@ const Header = () => {
                 />
               </Link>
             </div>
-            <div className="flex w-full items-center justify-between px-4">
+            <div className="flex w-full flex-col lg:flex-row items-center justify-between px-4">
               <div>
                 <button
                   onClick={navbarToggleHandler}
