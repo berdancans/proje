@@ -27,21 +27,25 @@ const Header = () => {
           : "absolute bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+      <div
+  className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
+    sticky ? "py-2" : "py-5"
+  }`}
+>
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo/logo-2.png"
             alt="logo"
             width={200}
-            height={40}
+            height={20}
             className="dark:hidden"
           />
           <Image
             src="/images/logo/logo.png"
             alt="logo"
             width={200}
-            height={40}
+            height={20}
             className="hidden dark:block"
           />
         </Link>
