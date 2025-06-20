@@ -22,25 +22,25 @@ const Header = () => {
     <header
       className={`header top-0 left-0 z-[99999] w-full transition-all duration-300 ${
         sticky
-          ? "fixed bg-white/80 dark:bg-gray-dark/90 backdrop-blur-md shadow-md"
-          : "absolute bg-transparent"
+          ? "fixed bg-white/90 dark:bg-gray-dark/90 backdrop-blur-sm shadow-md py-2"
+          : "absolute bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-center py-4 lg:flex-row lg:justify-center lg:space-x-16">
+        <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-center lg:space-x-16">
           <Link href="/" className="flex items-center justify-center">
             <Image
               src="/images/logo/logo-2.png"
               alt="logo"
               width={360}
-              height={40}
+              height={32}
               className="dark:hidden"
             />
             <Image
               src="/images/logo/logo.png"
               alt="logo"
               width={360}
-              height={40}
+              height={32}
               className="hidden dark:block"
             />
           </Link>
@@ -49,103 +49,3 @@ const Header = () => {
             {menuData.map((menuItem, index) => (
               <div key={index} className="relative group">
                 {menuItem.path ? (
-                  <Link
-                    href={menuItem.path}
-                    className={`text-base font-medium transition ${
-                      pathname === menuItem.path
-                        ? "text-primary dark:text-white"
-                        : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                    }`}
-                  >
-                    {menuItem.title}
-                  </Link>
-                ) : (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenIndex(openIndex === index ? -1 : index)
-                      }
-                      className="text-base font-medium flex items-center text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
-                    >
-                      {menuItem.title}
-                      <svg
-                        className="ml-1 h-4 w-4"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 111.06 1.061l-4.24 4.243a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className={`absolute left-0 mt-2 w-48 rounded-md bg-white dark:bg-dark shadow-lg p-3 z-50 ${
-                        openIndex === index ? "block" : "hidden"
-                      }`}
-                    >
-                      {menuItem.submenu.map((submenuItem, subIndex) => (
-                        <Link
-                          href={submenuItem.path}
-                          key={subIndex}
-                          className="block py-2 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                        >
-                          {submenuItem.title}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            ))}
-            <ThemeToggler />
-          </nav>
-
-          <button
-            onClick={() => setNavbarOpen(!navbarOpen)}
-            className="lg:hidden text-white dark:text-white"
-            aria-label="Toggle Menu"
-          >
-            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
-              <path
-                d={
-                  navbarOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-
-        {navbarOpen && (
-          <div className="lg:hidden flex flex-col items-center space-y-4 pb-6">
-            {menuData.map((menuItem, index) =>
-              menuItem.path ? (
-                <Link
-                  key={index}
-                  href={menuItem.path}
-                  className={`text-base font-medium ${
-                    pathname === menuItem.path
-                      ? "text-primary"
-                      : "text-dark dark:text-white/70"
-                  }`}
-                >
-                  {menuItem.title}
-                </Link>
-              ) : null
-            )}
-            <ThemeToggler />
-          </div>
-        )}
-      </div>
-    </header>
-  );
-};
-
-export default Header;
