@@ -22,6 +22,7 @@ const AboutSectionOne = () => {
       <div className="container">
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
+            {/* Sol Metin Alanı */}
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
                 title="Neden AI-First, Neden RelatIQ?"
@@ -41,29 +42,33 @@ RelatIQ, duygu analizi ve yazışma örüntüleri üzerinden bu krizleri öncede
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Modüler dashboard yapısı" />
-                    <List text="Geleceğin kurumsal iletişim modeli şekilleniyor. Kod tarafı seninle tamamlanacak." />
+                    <List text="Kurumsal iletişim yeniden tanımlanıyor. Kod tarafı seninle tamamlanacak." />
                     <List text="Sıfırdan teknik mimari kuracak CTO aranıyor" />
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Sağ Görsel Alanı */}
             <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
+              <div className="relative mx-auto max-w-[500px]">
                 <Image
                   src="/images/about/about-image.png"
                   alt="RelatIQ dashboard"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto w-full h-auto object-contain dark:hidden"
+                  width={500}
+                  height={500}
                 />
                 <Image
                   src="/images/about/about-image-dark.png"
                   alt="RelatIQ dashboard dark"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto hidden w-full h-auto object-contain dark:block"
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
+
           </div>
         </div>
       </div>
