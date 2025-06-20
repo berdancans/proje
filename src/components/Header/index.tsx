@@ -28,7 +28,7 @@ const Header = () => {
       }`}
     >
       <div
-        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
+        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
           sticky ? "py-1" : "py-4"
         }`}
       >
@@ -37,16 +37,20 @@ const Header = () => {
           <Image
             src="/images/logo/logo-2.png"
             alt="logo"
-            width={sticky ? 180 : 240}
-            height={sticky ? 40 : 56}
-            className="dark:hidden transition-all duration-300"
+            width={240}
+            height={56}
+            className={`dark:hidden transition-all duration-300 ${
+              sticky ? "scale-90" : "scale-100"
+            }`}
           />
           <Image
             src="/images/logo/logo.png"
             alt="logo"
-            width={sticky ? 180 : 240}
-            height={sticky ? 40 : 56}
-            className="hidden dark:block transition-all duration-300"
+            width={240}
+            height={56}
+            className={`hidden dark:block transition-all duration-300 ${
+              sticky ? "scale-90" : "scale-100"
+            }`}
           />
         </Link>
 
