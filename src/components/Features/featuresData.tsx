@@ -57,9 +57,9 @@ const featuresData: Feature[] = [
         <path d="M10 10H30V30H10V10Z" stroke="currentColor" strokeWidth="3" />
       </svg>
     ),
-    title: "İlk Müşteri ile Pilot Süreç Başladı",
+    title: "Pilot Süreç Kapıda",
     paragraph:
-      "Taha Giyim ile ilk test süreci başlatıldı. CTO, bu süreçte ürünün sahada denenmesine doğrudan katkı verecek.",
+      "Gerçek kullanıcı verisiyle ilk test süreci için geri sayım başladı. CTO, bu aşamanın teknik lideri olacak—karar verecek, yön çizecek, geleceği kodlayacak.",
   },
   {
     id: 6,

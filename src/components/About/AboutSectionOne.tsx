@@ -41,7 +41,7 @@ RelatIQ, duygu analizi ve yazışma örüntüleri üzerinden bu krizleri öncede
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Modüler dashboard yapısı" />
-                    <List text="İlk müşteri: Taha Giyim (aktif pilot)" />
+                    <List text="Geleceğin kurumsal iletişim modeli şekilleniyor. Kod tarafı seninle tamamlanacak." />
                     <List text="Sıfırdan teknik mimari kuracak CTO aranıyor" />
                   </div>
                 </div>
@@ -51,13 +51,13 @@ RelatIQ, duygu analizi ve yazışma örüntüleri üzerinden bu krizleri öncede
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
                 <Image
-                  src="/images/about/about-image.svg"
+                  src="/images/about/about-image.png"
                   alt="RelatIQ dashboard"
                   fill
                   className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
                 />
                 <Image
-                  src="/images/about/about-image-dark.svg"
+                  src="/images/about/about-image-dark.png"
                   alt="RelatIQ dashboard dark"
                   fill
                   className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
