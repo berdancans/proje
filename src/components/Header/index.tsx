@@ -21,39 +21,34 @@ const Header = () => {
 
   return (
     <header
-  className={`top-0 left-0 z-[9999] w-full transition-all duration-300 ${
-    sticky
-      ? "fixed bg-white/90 dark:bg-gray-900/95 shadow-md py-2 backdrop-blur-sm"
-      : "absolute bg-transparent py-4"
-  }`}
->
-  <div
-    className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
-      sticky ? "py-1" : "py-4"
-    }`}
-  >
+      className={`top-0 left-0 z-[9999] w-full transition-all duration-300 ${
+        sticky
+          ? "fixed bg-white/90 dark:bg-gray-900/95 shadow-md py-2 backdrop-blur-sm"
+          : "absolute bg-transparent py-4"
+      }`}
+    >
       <div
-        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
+        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
           sticky ? "py-1" : "py-4"
         }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center">
-  <Image
-    src="/images/logo/logo-2.png"
-    alt="logo"
-    width={sticky ? 240 : 280}
-    height={sticky ? 44 : 56}
-    className="dark:hidden transition-all duration-300"
-  />
-  <Image
-    src="/images/logo/logo.png"
-    alt="logo"
-    width={sticky ? 240 : 280}
-    height={sticky ? 44 : 56}
-    className="hidden dark:block transition-all duration-300"
-  />
-</Link>
+          <Image
+            src="/images/logo/logo-2.png"
+            alt="logo"
+            width={sticky ? 240 : 280}
+            height={sticky ? 44 : 56}
+            className="dark:hidden transition-all duration-300"
+          />
+          <Image
+            src="/images/logo/logo.png"
+            alt="logo"
+            width={sticky ? 240 : 280}
+            height={sticky ? 44 : 56}
+            className="hidden dark:block transition-all duration-300"
+          />
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-10">
@@ -116,7 +111,7 @@ const Header = () => {
         {/* Mobile Button */}
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
-          className="lg:hidden text-dark dark:text-white"
+          className="lg:hidden text-dark dark:text-white ml-2"
           aria-label="Toggle Menu"
         >
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
