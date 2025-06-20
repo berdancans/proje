@@ -8,144 +8,115 @@ import menuData from "./menuData";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
-
   const [sticky, setSticky] = useState(false);
-  const handleStickyNavbar = () => setSticky(window.scrollY >= 80);
-  useEffect(() => {
-    window.addEventListener("scroll", handleStickyNavbar);
-  }, []);
-
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => setOpenIndex(openIndex === index ? -1 : index);
+  const pathname = usePathname();
 
-  const usePathName = usePathname();
+  useEffect(() => {
+    const handleStickyNavbar = () => setSticky(window.scrollY >= 80);
+    window.addEventListener("scroll", handleStickyNavbar);
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
+  }, []);
 
   return (
     <header
-      className={`header top-0 left-0 z-40 flex w-full items-center ${
+      className={`header top-0 left-0 z-[99999] w-full transition-all duration-300 ${
         sticky
-          ? "dark:bg-gray-dark dark:shadow-sticky-dark shadow-sticky fixed z-9999 bg-white/80 backdrop-blur-xs transition"
+          ? "fixed bg-white/80 dark:bg-gray-dark/90 backdrop-blur-md shadow-md"
           : "absolute bg-transparent"
       }`}
     >
-      <div className="container">
-        <div className="relative -mx-4 flex w-full flex-col items-center justify-center">
-          <div className="w-full max-w-[360px] px-4 mb-4">
-            <Link
-              href="/"
-              className={`header-logo block w-full ${sticky ? "py-5 lg:py-2" : "py-8"}`}
-            >
-              <Image
-                src="/images/logo/logo-2.png"
-                alt="logo"
-                width={360}
-                height={48}
-                className="w-full dark:hidden mx-auto"
-              />
-              <Image
-                src="/images/logo/logo.png"
-                alt="logo"
-                width={360}
-                height={48}
-                className="hidden w-full dark:block mx-auto"
-              />
-            </Link>
-          </div>
-          <div className="flex w-full flex-col lg:flex-row items-center justify-center px-4">
-            <div>
-              <button
-                onClick={navbarToggleHandler}
-                id="navbarToggler"
-                aria-label="Mobile Menu"
-                className="ring-primary absolute top-1/2 right-4 block translate-y-[-50%] rounded-lg px-3 py-[6px] focus:ring-2 lg:hidden"
-              >
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                    navbarOpen ? "top-[7px] rotate-45" : ""
-                  }`}
-                />
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                    navbarOpen ? "opacity-0" : ""
-                  }`}
-                />
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                    navbarOpen ? "top-[-8px] -rotate-45" : ""
-                  }`}
-                />
-              </button>
-              <nav
-                id="navbarCollapse"
-                className={`navbar border-body-color/50 dark:border-body-color/20 dark:bg-dark absolute right-0 z-30 w-[250px] rounded border-[.5px] bg-white px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
-                  navbarOpen
-                    ? "visibility top-full opacity-100"
-                    : "invisible top-[120%] opacity-0"
-                }`}
-              >
-                <ul className="block lg:flex lg:space-x-12 text-center">
-                  {menuData.map((menuItem, index) => (
-                    <li key={index} className="group relative">
-                      {menuItem.path ? (
-                        <Link
-                          href={menuItem.path}
-                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                            usePathName === menuItem.path
-                              ? "text-primary dark:text-white"
-                              : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                          }`}
-                        >
-                          {menuItem.title}
-                        </Link>
-                      ) : (
-                        <>
-                          <p
-                            onClick={() => handleSubmenu(index)}
-                            className="text-dark group-hover:text-primary flex cursor-pointer items-center justify-between py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 dark:text-white/70 dark:group-hover:text-white"
-                          >
-                            {menuItem.title}
-                            <span className="pl-3">
-                              <svg width="25" height="24" viewBox="0 0 25 24">
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M6.29289 8.8427C6.68342 8.45217 7.31658 8.45217 7.70711 8.8427L12 13.1356L16.2929 8.8427C16.6834 8.45217 17.3166 8.45217 17.7071 8.8427C18.0976 9.23322 18.0976 9.86639 17.7071 10.2569L12 15.964L6.29289 10.2569C5.90237 9.86639 5.90237 9.23322 6.29289 8.8427Z"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </span>
-                          </p>
-                          <div
-                            className={`submenu dark:bg-dark relative top-full left-0 rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                              openIndex === index ? "block" : "hidden"
-                            }`}
-                          >
-                            {menuItem.submenu.map((submenuItem, index) => (
-                              <Link
-                                href={submenuItem.path}
-                                key={index}
-                                className="text-dark hover:text-primary block rounded-sm py-2.5 text-sm lg:px-3 dark:text-white/70 dark:hover:text-white"
-                              >
-                                {submenuItem.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-            <div className="flex items-center justify-end mt-4 lg:mt-0">
-              <ThemeToggler />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-between py-2 lg:py-3">
+          {/* Logo */}
+          <Link href="/" className="flex items-center justify-center">
+            <Image
+              src="/images/logo/logo-2.png"
+              alt="logo"
+              width={160}
+              height={40}
+              className="dark:hidden"
+            />
+            <Image
+              src="/images/logo/logo.png"
+              alt="logo"
+              width={160}
+              height={40}
+              className="hidden dark:block"
+            />
+          </Link>
 
-export default Header;
+          {/* Desktop menu */}
+          <nav className="hidden lg:flex items-center space-x-10">
+            {menuData.map((menuItem, index) => (
+              <div key={index} className="relative group">
+                {menuItem.path ? (
+                  <Link
+                    href={menuItem.path}
+                    className={`text-base font-medium transition ${
+                      pathname === menuItem.path
+                        ? "text-primary dark:text-white"
+                        : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                    }`}
+                  >
+                    {menuItem.title}
+                  </Link>
+                ) : (
+                  <>
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className="text-base font-medium flex items-center text-dark dark:text-white/70 hover:text-primary dark:hover:text-white"
+                    >
+                      {menuItem.title}
+                      <svg
+                        className="ml-1 h-4 w-4"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 111.06 1.061l-4.24 4.243a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className={`absolute left-0 mt-2 w-48 rounded-md bg-white dark:bg-dark shadow-lg p-3 z-50 ${
+                        openIndex === index ? "block" : "hidden"
+                      }`}
+                    >
+                      {menuItem.submenu.map((submenuItem, subIndex) => (
+                        <Link
+                          href={submenuItem.path}
+                          key={subIndex}
+                          className="block py-2 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                        >
+                          {submenuItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+            <ThemeToggler />
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="lg:hidden text-white dark:text-white"
+            aria-label="Toggle Menu"
+          >
+            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
+              <path
+                d={
+                  navbarOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+                stroke="currentColor"
+                strokeWidth="2"
+                s
