@@ -28,7 +28,6 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-between py-2 lg:py-3">
-          {/* Logo */}
           <Link href="/" className="flex items-center justify-center">
             <Image
               src="/images/logo/logo-2.png"
@@ -46,7 +45,6 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop menu */}
           <nav className="hidden lg:flex items-center space-x-10">
             {menuData.map((menuItem, index) => (
               <div key={index} className="relative group">
@@ -104,7 +102,6 @@ const Header = () => {
             <ThemeToggler />
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
             className="lg:hidden text-white dark:text-white"
@@ -119,4 +116,36 @@ const Header = () => {
                 }
                 stroke="currentColor"
                 strokeWidth="2"
-                s
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {navbarOpen && (
+          <div className="lg:hidden flex flex-col items-center space-y-4 pb-6">
+            {menuData.map((menuItem, index) =>
+              menuItem.path ? (
+                <Link
+                  key={index}
+                  href={menuItem.path}
+                  className={`text-base font-medium ${
+                    pathname === menuItem.path
+                      ? "text-primary"
+                      : "text-dark dark:text-white/70"
+                  }`}
+                >
+                  {menuItem.title}
+                </Link>
+              ) : null
+            )}
+            <ThemeToggler />
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
