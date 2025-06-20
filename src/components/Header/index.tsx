@@ -27,25 +27,25 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-between py-2 lg:py-3">
+        <div className="flex flex-col items-center justify-center py-4 lg:flex-row lg:justify-center lg:space-x-16">
           <Link href="/" className="flex items-center justify-center">
             <Image
               src="/images/logo/logo-2.png"
               alt="logo"
-              width={160}
+              width={360}
               height={40}
               className="dark:hidden"
             />
             <Image
               src="/images/logo/logo.png"
               alt="logo"
-              width={160}
+              width={360}
               height={40}
               className="hidden dark:block"
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-10">
+          <nav className="hidden lg:flex items-center justify-center space-x-10">
             {menuData.map((menuItem, index) => (
               <div key={index} className="relative group">
                 {menuItem.path ? (
