@@ -28,25 +28,25 @@ const Header = () => {
       }`}
     >
       <div
-  className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
-    sticky ? "py-2" : "py-5"
-  }`}
->
+        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
+          sticky ? "py-1" : "py-4"
+        }`}
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo/logo-2.png"
             alt="logo"
-            width={200}
-            height={20}
-            className="dark:hidden"
+            width={sticky ? 160 : 240}
+            height={sticky ? 28 : 40}
+            className="dark:hidden transition-all duration-300"
           />
           <Image
             src="/images/logo/logo.png"
             alt="logo"
-            width={200}
-            height={20}
-            className="hidden dark:block"
+            width={sticky ? 160 : 240}
+            height={sticky ? 28 : 40}
+            className="hidden dark:block transition-all duration-300"
           />
         </Link>
 
@@ -128,29 +128,29 @@ const Header = () => {
             />
           </svg>
         </button>
-
-        {/* Mobile Menu */}
-        {navbarOpen && (
-          <div className="lg:hidden mt-4 flex flex-col items-center space-y-4 pb-4">
-            {menuData.map((menuItem, index) =>
-              menuItem.path ? (
-                <Link
-                  key={index}
-                  href={menuItem.path}
-                  className={`text-base font-medium ${
-                    pathname === menuItem.path
-                      ? "text-primary"
-                      : "text-dark dark:text-white/70"
-                  }`}
-                >
-                  {menuItem.title}
-                </Link>
-              ) : null
-            )}
-            <ThemeToggler />
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {navbarOpen && (
+        <div className="lg:hidden mt-4 flex flex-col items-center space-y-4 pb-4">
+          {menuData.map((menuItem, index) =>
+            menuItem.path ? (
+              <Link
+                key={index}
+                href={menuItem.path}
+                className={`text-base font-medium ${
+                  pathname === menuItem.path
+                    ? "text-primary"
+                    : "text-dark dark:text-white/70"
+                }`}
+              >
+                {menuItem.title}
+              </Link>
+            ) : null
+          )}
+          <ThemeToggler />
+        </div>
+      )}
     </header>
   );
 };
