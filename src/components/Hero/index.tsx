@@ -26,8 +26,8 @@ const Hero = () => {
                 CTO Çağrısını Oku
               </Link>
               <Link
-                href="mailto:berdan@ai-first.me?subject=CTO Adaylığı"
-                className="rounded-md border border-black bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-100 dark:border-white dark:text-white dark:hover:bg-white/10"
+                href="mailto:gurelberdancan@gmail.com?subject=CTO Adaylığı"
+                className="rounded-md border border-black bg-white px-8 py-4 text-base font-semibold text-black hover:bg-gray-100 dark:border-white dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 Bana Ulaş
               </Link>
