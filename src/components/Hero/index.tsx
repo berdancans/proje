@@ -30,7 +30,7 @@ const Hero = () => {
             </h1>
             <p className="mb-10 text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
               İlk ürünümüz <strong>RelatIQ</strong>, kurumsal iletişimdeki krizleri
-              oluşmadan fark eden yapay zekâ sistemi. Şirket kuruldu. Sermaye hazır.
+              oluşmadan fark eden yapay zekâ sistemi..
               Şimdi bu vizyonu birlikte inşa edecek <strong>kurucu CTO</strong>'yu arıyoruz.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -28,7 +28,7 @@ const AboutSectionOne = () => {
                 title="Neden AI-First, Neden RelatIQ?"
                 paragraph="Kurumsal iletişimdeki krizler genellikle geç fark edilir.  
 RelatIQ, duygu analizi ve yazışma örüntüleri üzerinden bu krizleri önceden tespit eden ilk yapay zeka sistemidir.  
-Şirket kuruldu, sermaye hazır. Şimdi bu sistemi birlikte kurumsal ölçekte büyütecek bir CTO arıyoruz."
+Şimdi bu sistemi birlikte kurumsal ölçekte büyütecek bir CTO arıyoruz."
                 mb="44px"
               />
 
