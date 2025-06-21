@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -32,28 +31,6 @@ const Header = () => {
           sticky ? "py-1" : "py-4"
         }`}
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo/logo-2.png"
-            alt="logo-light"
-            width={300}
-            height={72}
-            className={`dark:hidden h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${
-              sticky ? "scale-90" : "scale-100"
-            }`}
-          />
-          <Image
-            src="/images/logo/logo.png"
-            alt="logo-dark"
-            width={300}
-            height={72}
-            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${
-              sticky ? "scale-90" : "scale-100"
-            }`}
-          />
-        </Link>
-
         {/* Navigation */}
         <nav className="hidden lg:flex items-center space-x-10">
           {menuData.map((menuItem, index) => (

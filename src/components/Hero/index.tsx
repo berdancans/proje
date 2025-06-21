@@ -1,4 +1,6 @@
 "use client";
+
+import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
@@ -8,8 +10,21 @@ const Hero = () => {
       className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-900 md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
     >
       <div className="container">
-        <div className="flex flex-wrap justify-center text-center">
-          <div className="w-full px-4 max-w-[800px]">
+        <div className="flex flex-col items-center justify-center text-center px-4">
+          {/* Fade-in logo */}
+          <div className="mb-10 animate-fade-in">
+            <Image
+              src="/images/logo/logo-v2.png"
+              alt="AI-First Logo"
+              width={200}
+              height={80}
+              priority
+              className="mx-auto"
+            />
+          </div>
+
+          {/* Metin */}
+          <div className="max-w-[800px]">
             <h1 className="mb-6 text-4xl font-bold leading-tight text-black dark:text-white sm:text-5xl md:text-6xl">
               Türkiye'nin ilk AI-First şirketini kuruyoruz.
             </h1>
