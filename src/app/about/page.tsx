@@ -5,17 +5,17 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Page | Free Next.js Template for Startup and SaaS",
-  description: "This is About Page for Startup Nextjs Template",
-  // other metadata
+  title: "Hakkımızda | AI-First Teknoloji Şirketi",
+  description:
+    "AI-First, yapay zekayı merkezine koyan Türkiye merkezli bir teknoloji şirketidir. Kurumsal iletişimi dönüştüren ilk ürünümüz RelatIQ ile tanışın.",
 };
 
 const AboutPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="About Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Hakkımızda"
+        description="AI-First, yapay zekayı odağına alan ve kurumsal dünyayı dönüştürmeyi hedefleyen bir teknoloji şirketidir. İlk ürünümüz RelatIQ, kurum içi iletişimi analiz ederek krizleri oluşmadan fark etmenizi sağlar."
       />
       <AboutSectionOne />
       <AboutSectionTwo />
