@@ -23,34 +23,32 @@ const Header = () => {
     <header
       className={`top-0 left-0 z-[9999] w-full transition-all duration-300 ${
         sticky
-          ? "fixed bg-white/80 dark:bg-gray-900/90 shadow-md backdrop-blur-md py-2"
-          : "absolute bg-transparent py-5"
+          ? "fixed bg-white/90 dark:bg-gray-900/90 shadow-md backdrop-blur-md py-1"
+          : "absolute bg-transparent py-4"
       }`}
     >
       <div
-        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
+        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ${
           sticky ? "py-1" : "py-4"
-        }`}
+        } transition-all duration-300`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center">
+          {/* Light Mode Logo */}
           <Image
             src="/images/logo/logo-2.png"
             alt="logo"
-            width={300}
-            height={72}
-            className={`dark:hidden transition-all duration-300 ${
-              sticky ? "scale-90" : "scale-100"
-            }`}
+            width={sticky ? 220 : 300}
+            height={sticky ? 52 : 72}
+            className="block dark:hidden transition-all duration-300"
           />
+          {/* Dark Mode Logo */}
           <Image
             src="/images/logo/logo.png"
-            alt="logo"
-            width={300}
-            height={72}
-            className={`hidden dark:block transition-all duration-300 ${
-              sticky ? "scale-90" : "scale-100"
-            }`}
+            alt="logo dark"
+            width={sticky ? 220 : 300}
+            height={sticky ? 52 : 72}
+            className="hidden dark:block transition-all duration-300"
           />
         </Link>
 
