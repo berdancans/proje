@@ -37,8 +37,8 @@ const Header = () => {
           <Image
             src="/images/logo/logo-2.png"
             alt="logo"
-            width={240}
-            height={56}
+            width={300}
+            height={72}
             className={`dark:hidden transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
             }`}
@@ -46,8 +46,8 @@ const Header = () => {
           <Image
             src="/images/logo/logo.png"
             alt="logo"
-            width={240}
-            height={56}
+            width={300}
+            height={72}
             className={`hidden dark:block transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
             }`}
