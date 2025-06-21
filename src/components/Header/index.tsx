@@ -39,7 +39,7 @@ const Header = () => {
             alt="logo"
             width={300}
             height={72}
-            className={`dark:hidden transition-all duration-300 ${
+            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${sticky ? "scale-90" : "scale-100"}`}
               sticky ? "scale-90" : "scale-100"
             }`}
           />
@@ -48,7 +48,7 @@ const Header = () => {
             alt="logo"
             width={300}
             height={72}
-            className={`hidden dark:block transition-all duration-300 ${
+            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${sticky ? "scale-90" : "scale-100"}`}
               sticky ? "scale-90" : "scale-100"
             }`}
           />
