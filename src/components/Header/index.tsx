@@ -36,19 +36,19 @@ const Header = () => {
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo/logo-2.png"
-            alt="logo"
+            alt="logo-light"
             width={300}
             height={72}
-            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${sticky ? "scale-90" : "scale-100"}`}
+            className={`dark:hidden h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
             }`}
           />
           <Image
             src="/images/logo/logo.png"
-            alt="logo"
+            alt="logo-dark"
             width={300}
             height={72}
-            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${sticky ? "scale-90" : "scale-100"}`}
+            className={`hidden dark:block h-auto w-[160px] sm:w-[220px] md:w-[280px] lg:w-[300px] transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
             }`}
           />
@@ -95,7 +95,7 @@ const Header = () => {
                       openIndex === index ? "block" : "hidden"
                     }`}
                   >
-                    {menuItem.submenu.map((submenuItem, subIndex) => (
+                    {menuItem.submenu?.map((submenuItem, subIndex) => (
                       <Link
                         href={submenuItem.path}
                         key={subIndex}
