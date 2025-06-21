@@ -21,16 +21,16 @@ const Header = () => {
 
   return (
     <header
-      className={top-0 left-0 z-[9999] w-full transition-all duration-300 ${
+      className={`top-0 left-0 z-[9999] w-full transition-all duration-300 ${
         sticky
           ? "fixed bg-white/80 dark:bg-gray-900/90 shadow-md backdrop-blur-md py-2"
           : "absolute bg-transparent py-5"
-      }}
+      }`}
     >
       <div
-        className={container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
+        className={`container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between transition-all duration-300 ${
           sticky ? "py-1" : "py-4"
-        }}
+        }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -39,18 +39,18 @@ const Header = () => {
             alt="logo"
             width={300}
             height={72}
-            className={dark:hidden transition-all duration-300 ${
+            className={`dark:hidden transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
-            }}
+            }`}
           />
           <Image
             src="/images/logo/logo.png"
             alt="logo"
             width={300}
             height={72}
-            className={hidden dark:block transition-all duration-300 ${
+            className={`hidden dark:block transition-all duration-300 ${
               sticky ? "scale-90" : "scale-100"
-            }}
+            }`}
           />
         </Link>
 
@@ -61,11 +61,11 @@ const Header = () => {
               {menuItem.path ? (
                 <Link
                   href={menuItem.path}
-                  className={text-base font-medium transition ${
+                  className={`text-base font-medium transition ${
                     pathname === menuItem.path
                       ? "text-primary dark:text-white"
                       : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                  }}
+                  }`}
                 >
                   {menuItem.title}
                 </Link>
@@ -91,9 +91,9 @@ const Header = () => {
                     </svg>
                   </button>
                   <div
-                    className={absolute left-0 mt-2 w-48 rounded-md bg-white dark:bg-gray-800 shadow-lg p-3 z-50 ${
+                    className={`absolute left-0 mt-2 w-48 rounded-md bg-white dark:bg-gray-800 shadow-lg p-3 z-50 ${
                       openIndex === index ? "block" : "hidden"
-                    }}
+                    }`}
                   >
                     {menuItem.submenu.map((submenuItem, subIndex) => (
                       <Link
@@ -141,11 +141,11 @@ const Header = () => {
                 <Link
                   key={index}
                   href={menuItem.path}
-                  className={text-base font-medium ${
+                  className={`text-base font-medium ${
                     pathname === menuItem.path
                       ? "text-primary"
                       : "text-dark dark:text-white/70"
-                  }}
+                  }`}
                 >
                   {menuItem.title}
                 </Link>
