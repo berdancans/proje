@@ -31,7 +31,7 @@ const Hero = () => {
             <p className="mb-10 text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
               İlk ürünümüz <strong>RelatIQ</strong>, kurumsal iletişimdeki krizleri
               oluşmadan fark eden yapay zekâ sistemi... <br />
-              Şimdi bu vizyonu birlikte inşa edecek <strong>kurucu CTO</strong>'yu arıyoruz.
+              Şimdi bu hedefi birlikte kuracak <strong>kurucu CTO</strong>'yu arıyoruz.
             </p>
 
             {/* Butonlar */}
@@ -42,12 +42,14 @@ const Hero = () => {
               >
                 CTO Çağrısını Oku
               </Link>
-              <Link
+              <a
                 href="mailto:can@ai-first.me?subject=CTO Adaylığı"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md border border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-gray-900 transition dark:border-white"
               >
                 Bana Ulaş
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -65,7 +67,7 @@ const Hero = () => {
             <br /><br />
             İlk ürünümüz <strong>RelatIQ</strong>, şirket içi iletişimdeki potansiyel krizleri daha oluşmadan önce tespit eden, sessizlikleri ve duygusal kırılmaları analiz eden bir yapay zekâ sistemidir.
             <br /><br />
-            Bu fikirle şirketi kurdum, alan adını aldım, logoyu çizdim, ilk sunumu hazırladım ve hangi pilot şirkete gideceğimi kararlaştırdım. Tüm adımları tek başıma attım. Çünkü biliyorum: Yapay zekâ sadece algoritma değil, aynı zamanda bir vizyon ve vicdandır.
+            Bu fikirle şirketi kurdum, alan adını aldım, logoyu çizdim, ilk sunumu hazırladım ve hangi pilot şirkete gideceğimi kararlaştırdım. Tüm adımları tek başıma attım. Çünkü biliyorum: Yapay zekâ sadece algoritma değil, aynı zamanda bir kararlılık ve sorumluluktur.
             <br /><br />
             AI-First, sadece bir yazılım girişimi değil — gelecekte nasıl çalışacağımızı belirleyecek bir yapı taşıdır. Ve bu yapı taşını inşa etmeye buradan başlıyoruz.
           </p>
