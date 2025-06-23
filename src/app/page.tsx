@@ -23,7 +23,6 @@ export default function Home() {
       <RelatIQDashboard />
       <Features />
       <Contact />
-      <FounderSection /> {/* 🌟 Kurucunun Mesajı buraya geldi */}
     </>
   );
 }
