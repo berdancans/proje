@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import ScrollUp from "@/components/Common/ScrollUp";
+import FounderSection from "@/components/About/FounderSection";
 import Hero from "@/components/Hero";
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import Features from "@/components/Features";
 import Contact from "@/components/Contact";
-import RelatIQDashboard from "@/components/RelatIQDashboard"; // 🌟 Ekledik
+import RelatIQDashboard from "@/components/RelatIQDashboard";
 
 export const metadata: Metadata = {
   title: "RelatIQ – Kurumsal iletişimde yapay zekâ devrimi",
@@ -20,9 +21,10 @@ export default function Home() {
       <Hero />
       <AboutSectionOne />
       <AboutSectionTwo />
-      <RelatIQDashboard /> {/* 🌟 Yeni sahne burada */}
+      <RelatIQDashboard />
       <Features />
       <Contact />
+      <FounderSection /> {/* 🌟 Kurucunun Mesajı buraya geldi */}
     </>
   );
 }
