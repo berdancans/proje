@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ScrollUp from "@/components/Common/ScrollUp";
-import FounderSection from "@/components/About/FounderSection";
 import Hero from "@/components/Hero";
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
