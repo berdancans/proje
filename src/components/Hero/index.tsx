@@ -57,7 +57,7 @@ const Hero = () => {
           id="kurucudan-mesaj"
           className="mt-20 max-w-4xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-gray-900 dark:text-white"
         >
-          <h2 className="text-2xl font-bold mb-4 text-center">Kurucunun Hikayesi</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center"></h2>
           <p className="text-base leading-relaxed space-y-4 text-center">
             Ben <strong>Berdan Can Gürel</strong>. Türkiye merkezli ama global ölçekte çözümler sunan bir yapay zekâ şirketi kuruyorum: <strong>AI-First</strong>.
             <br /><br />
