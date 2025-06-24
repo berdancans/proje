@@ -1,93 +1,66 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 
-const Hero = () => {
+const Contact = () => {
   return (
-    <section
-      id="home"
-      className="relative z-10 overflow-hidden bg-white pb-20 pt-[120px] dark:bg-gray-900 md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
-    >
-      <div className="container">
-        <div className="flex flex-col items-center justify-center text-center px-4">
-          {/* Logo */}
-          <div className="mb-10 animate-fade-in">
-            <Image
-              src="/images/logo/logo-v2.png"
-              alt="AI-First Logo"
-              width={200}
-              height={80}
-              priority
-              className="mx-auto"
+    <section id="contact" className="py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-8">
+          İletişime Geç
+        </h2>
+        <form className="max-w-xl mx-auto space-y-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Adınız
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-primary focus:ring-2 focus:ring-primary"
+              placeholder="Adınızı girin"
             />
           </div>
 
-          {/* Metin */}
-          <div className="max-w-[800px]">
-            <h1 className="mb-6 text-4xl font-bold leading-tight text-black dark:text-white sm:text-5xl md:text-6xl">
-              Türkiye'nin ilk AI-First şirketini kuruyoruz.
-            </h1>
-            <p className="mb-10 text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
-              İlk ürünümüz <strong>RelatIQ</strong>, kurumsal iletişimdeki krizleri
-              oluşmadan fark eden yapay zekâ sistemi... <br />
-              Şimdi bu hedefi birlikte kuracak <strong>kurucu CTO</strong>'yu arıyoruz.
-            </p>
-
-            {/* Butonlar */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
-              {/* CTO Çağrısı */}
-              <Link
-                href="#kurucudan-mesaj"
-                className="rounded-md bg-[#3B82F6] px-8 py-4 text-lg font-semibold text-white hover:bg-[#2563EB] transition"
-              >
-                CTO Çağrısını Oku
-              </Link>
-
-              {/* Gmail'den Ulaş */}
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=berdan@ai-first.me&su=CTO%20Adayl%C4%B1%C4%9F%C4%B1&body=Selam%20Berdan%2C%20AI-First%20projesini%20inceledim%20ve%20CTO%20ça%C4%9Fr%C4%B1n%20dikkatimi%20%C3%A7ekti.%20K%C4%B1sa%20bir%20g%C3%B6r%C3%BC%C5%9Fme%20i%C3%A7in%20m%C3%BCsait%20misin%3F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-md bg-red-600 px-8 py-4 text-lg font-semibold text-white hover:bg-red-700 transition"
-              >
-                Gmail’den Ulaş
-              </a>
-
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/905347327080?text=Selam%20Berdan%2C%20AI-First%20projesini%20inceledim%20ve%20CTO%20ça%C4%9Fr%C4%B1s%C4%B1%20ile%20ilgileniyorum."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-md bg-green-500 px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 transition"
-              >
-                WhatsApp’tan Ulaş
-              </a>
-            </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              E-posta
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-primary focus:ring-2 focus:ring-primary"
+              placeholder="E-posta adresinizi girin"
+            />
           </div>
-        </div>
 
-        {/* Kurucudan Mesaj */}
-        <div
-          id="kurucudan-mesaj"
-          className="mt-20 max-w-4xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-gray-900 dark:text-white"
-        >
-          <h2 className="text-2xl font-bold mb-4 text-center">Vizyon Hikayesi</h2>
-          <p className="text-base leading-relaxed space-y-4 text-center">
-            Ben <strong>Berdan Can Gürel</strong>. Türkiye merkezli ama global ölçekte çözümler sunan bir yapay zekâ şirketi kuruyorum: <strong>AI-First</strong>.
-            <br /><br />
-            Bu yolculuk lüks bir tercihten değil, zorunlulukla gelen kararlılıktan doğdu. Arkamda ekip yoktu. Yatırımcım yoktu. Güvenli bir çıkış planım da yoktu. Ama önümde yalnızca tek bir hedef vardı: Yapay zekâ ile global ölçekte çözümler üretmek.
-            <br /><br />
-            İlk ürünümüz <strong>RelatIQ</strong>, şirket içi iletişimdeki potansiyel krizleri daha oluşmadan önce tespit eden, sessizlikleri ve duygusal kırılmaları analiz eden bir yapay zekâ sistemidir.
-            <br /><br />
-            Bu fikirle şirketi kurdum, alan adını aldım, logoyu çizdim, ilk sunumu hazırladım ve hangi pilot şirkete gideceğimi kararlaştırdım. Tüm adımları tek başıma attım. Çünkü biliyorum: Yapay zekâ sadece algoritma değil, aynı zamanda bir kararlılık ve sorumluluktur.
-            <br /><br />
-            AI-First, sadece bir yazılım girişimi değil — gelecekte nasıl çalışacağımızı belirleyecek bir yapı taşıdır. Ve bu yapı taşını inşa etmeye buradan başlıyoruz.
-          </p>
-        </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Mesajınız
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-primary focus:ring-2 focus:ring-primary"
+              placeholder="Mesajınızı yazın"
+            />
+          </div>
+
+          <div className="text-center">
+            <button
+              type="submit"
+              className="rounded-md bg-primary px-6 py-3 text-lg font-semibold text-white hover:bg-primary-dark transition"
+            >
+              Gönder
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default Contact;
