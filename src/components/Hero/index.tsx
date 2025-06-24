@@ -43,10 +43,18 @@ const Hero = () => {
                 CTO Çağrısını Oku
               </Link>
               <a
-                href="mailto:can@ai-first.me?subject=CTO Adaylığı"                           
+                href="mailto:can@ai-first.me?subject=CTO%20Adayl%C4%B1%C4%9F%C4%B1"
                 className="rounded-md border border-white px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-gray-900 transition dark:border-white"
               >
                 Bana Ulaş
+              </a>
+              <a
+                href="https://wa.me/905347327080?text=Selam%20Berdan%2C%20AI-First%20projesini%20inceledim%20ve%20CTO%20çağrısı%20ile%20ilgileniyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-green-500 px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 transition"
+              >
+                WhatsApp’tan Ulaş
               </a>
             </div>
           </div>

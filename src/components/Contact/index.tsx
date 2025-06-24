@@ -1,80 +1,93 @@
-const Contact = () => {
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+
+const Hero = () => {
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+    <section
+      id="home"
+      className="relative z-10 overflow-hidden bg-white pb-20 pt-[120px] dark:bg-gray-900 md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+    >
       <div className="container">
-        <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="w-full px-4 lg:w-8/12 xl:w-8/12">
-            <div
-              className="mb-12 rounded-xs bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
-              data-wow-delay=".15s"
-            >
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Birlikte Büyütelim
-              </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
-                CTO olarak bu yolculuğa katkı sağlamak istiyorsan, birkaç satır bırakman yeterli. Kısa süre içinde seninle iletişime geçeceğiz.
-              </p>
-              <form>
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Adınız
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Adınızı girin"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        E-posta Adresiniz
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="E-posta adresinizi girin"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Mesajınız
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder="Kendinizden veya nasıl katkı sunmak istediğinizden bahsedebilirsiniz."
-                        className="border-stroke w-full resize-none rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <button className="rounded-xs bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
-                      Gönder
-                    </button>
-                  </div>
-                </div>
-              </form>
+        <div className="flex flex-col items-center justify-center text-center px-4">
+          {/* Logo */}
+          <div className="mb-10 animate-fade-in">
+            <Image
+              src="/images/logo/logo-v2.png"
+              alt="AI-First Logo"
+              width={200}
+              height={80}
+              priority
+              className="mx-auto"
+            />
+          </div>
+
+          {/* Metin */}
+          <div className="max-w-[800px]">
+            <h1 className="mb-6 text-4xl font-bold leading-tight text-black dark:text-white sm:text-5xl md:text-6xl">
+              Türkiye'nin ilk AI-First şirketini kuruyoruz.
+            </h1>
+            <p className="mb-10 text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
+              İlk ürünümüz <strong>RelatIQ</strong>, kurumsal iletişimdeki krizleri
+              oluşmadan fark eden yapay zekâ sistemi... <br />
+              Şimdi bu hedefi birlikte kuracak <strong>kurucu CTO</strong>'yu arıyoruz.
+            </p>
+
+            {/* Butonlar */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+              {/* CTO Çağrısı */}
+              <Link
+                href="#kurucudan-mesaj"
+                className="rounded-md bg-[#3B82F6] px-8 py-4 text-lg font-semibold text-white hover:bg-[#2563EB] transition"
+              >
+                CTO Çağrısını Oku
+              </Link>
+
+              {/* Gmail'den Ulaş */}
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=berdan@ai-first.me&su=CTO%20Adayl%C4%B1%C4%9F%C4%B1&body=Selam%20Berdan%2C%20AI-First%20projesini%20inceledim%20ve%20CTO%20ça%C4%9Fr%C4%B1n%20dikkatimi%20%C3%A7ekti.%20K%C4%B1sa%20bir%20g%C3%B6r%C3%BC%C5%9Fme%20i%C3%A7in%20m%C3%BCsait%20misin%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-red-600 px-8 py-4 text-lg font-semibold text-white hover:bg-red-700 transition"
+              >
+                Gmail’den Ulaş
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/905347327080?text=Selam%20Berdan%2C%20AI-First%20projesini%20inceledim%20ve%20CTO%20ça%C4%9Fr%C4%B1s%C4%B1%20ile%20ilgileniyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-green-500 px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 transition"
+              >
+                WhatsApp’tan Ulaş
+              </a>
             </div>
           </div>
+        </div>
+
+        {/* Kurucudan Mesaj */}
+        <div
+          id="kurucudan-mesaj"
+          className="mt-20 max-w-4xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-gray-900 dark:text-white"
+        >
+          <h2 className="text-2xl font-bold mb-4 text-center">Vizyon Hikayesi</h2>
+          <p className="text-base leading-relaxed space-y-4 text-center">
+            Ben <strong>Berdan Can Gürel</strong>. Türkiye merkezli ama global ölçekte çözümler sunan bir yapay zekâ şirketi kuruyorum: <strong>AI-First</strong>.
+            <br /><br />
+            Bu yolculuk lüks bir tercihten değil, zorunlulukla gelen kararlılıktan doğdu. Arkamda ekip yoktu. Yatırımcım yoktu. Güvenli bir çıkış planım da yoktu. Ama önümde yalnızca tek bir hedef vardı: Yapay zekâ ile global ölçekte çözümler üretmek.
+            <br /><br />
+            İlk ürünümüz <strong>RelatIQ</strong>, şirket içi iletişimdeki potansiyel krizleri daha oluşmadan önce tespit eden, sessizlikleri ve duygusal kırılmaları analiz eden bir yapay zekâ sistemidir.
+            <br /><br />
+            Bu fikirle şirketi kurdum, alan adını aldım, logoyu çizdim, ilk sunumu hazırladım ve hangi pilot şirkete gideceğimi kararlaştırdım. Tüm adımları tek başıma attım. Çünkü biliyorum: Yapay zekâ sadece algoritma değil, aynı zamanda bir kararlılık ve sorumluluktur.
+            <br /><br />
+            AI-First, sadece bir yazılım girişimi değil — gelecekte nasıl çalışacağımızı belirleyecek bir yapı taşıdır. Ve bu yapı taşını inşa etmeye buradan başlıyoruz.
+          </p>
         </div>
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Hero;
